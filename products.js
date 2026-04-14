@@ -1,5 +1,5 @@
 // ============================================
-// AMORÉ BOUTIQUE — PRODUCT CATALOG
+// CUPID BOUTIQUE — PRODUCT CATALOG
 // Edit this file to manage your products!
 // ============================================
 

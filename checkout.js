@@ -1,5 +1,5 @@
 // ============================================
-// AMORÉ BOUTIQUE — CHECKOUT JS
+// CUPID BOUTIQUE — CHECKOUT JS
 // Google Sheets + Email integration
 // ============================================
 
@@ -163,7 +163,7 @@ async function confirmOrder() {
 
   try {
     // Send to Google Sheets via Apps Script
-    if (GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+    if (GOOGLE_SCRIPT_URL !== 'https://script.google.com/macros/s/AKfycbz-TeyE0W47uEGcScAMN1zT3wqklZqZEBBScfQi0ypA-RRJiWz25OZ1hPsaFor9uZFL1A/exec') {
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
