@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop – AMORÉ Boutique</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="announcement-bar">
+  <p>✨ Free delivery on orders over 50DT &nbsp;|&nbsp; 💌 New arrivals every Friday &nbsp;|&nbsp; 🎀 Gift wrapping available</p>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <nav class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link active">Shop</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">AMORÉ</span>
+      <span class="logo-sub">boutique</span>
+    </a>
+    <div class="nav-right">
+      <button class="icon-btn search-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" onclick="openCart()" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- SHOP HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">The Shop ✦</h1>
+  <p>Every piece curated with love. Tap your fave.</p>
+</section>
+
+<!-- CATEGORY TABS -->
+<section class="shop-nav-section">
+  <div class="container">
+    <div class="category-tabs" id="categoryTabs">
+      <button class="cat-tab active" data-cat="all">All</button>
+      <button class="cat-tab" data-cat="jewelry">💎 Jewelry</button>
+      <button class="cat-tab" data-cat="accessories">👜 Accessories</button>
+      <button class="cat-tab" data-cat="hair">🎀 Hair</button>
+      <button class="cat-tab" data-cat="cases">💻 Cases</button>
+      <button class="cat-tab" data-cat="beauty">💄 Beauty</button>
+      <button class="cat-tab" data-cat="charms">🌸 Charms</button>
+    </div>
+
+    <!-- SUBCATEGORY PILLS -->
+    <div class="subcategory-pills" id="subcategoryPills"></div>
+
+    <!-- FILTER + SORT BAR -->
+    <div class="shop-toolbar">
+      <span class="product-count" id="productCount">All products</span>
+      <div class="shop-sort">
+        <select id="sortSelect" onchange="sortProducts()">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="new">Newest First</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="shop-section">
+  <div class="container">
+    <div class="products-grid" id="shopGrid"></div>
+    <div class="no-products" id="noProducts" style="display:none">
+      <p>✨ No products in this category yet. Check back soon!</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">AMORÉ</div>
+        <p>Aesthetic jewelry & gifts. Based in Tunisia. 💌</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html?cat=jewelry">Jewelry</a>
+        <a href="shop.html?cat=accessories">Accessories</a>
+        <a href="shop.html?cat=cases">Cases</a>
+        <a href="shop.html?cat=beauty">Beauty</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>We Accept</h4>
+        <div class="payment-badge">💵 Cash on Delivery</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AMORÉ Boutique. Made with ♡ in Tunisia.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag 🛍️</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span>Subtotal</span><span id="cartSubtotal">0 DT</span>
+    </div>
+    <div class="cart-delivery">
+      <span>Delivery fee</span><span>8 DT</span>
+    </div>
+    <div class="cart-total">
+      <span>Total</span><span id="cartTotal">0 DT</span>
+    </div>
+    <a href="checkout.html" class="btn btn-primary btn-full">Checkout →</a>
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <p>🛍️</p>
+    <p>Your bag is empty</p>
+    <a href="shop.html" class="btn btn-outline" onclick="closeCart()">Start Shopping</a>
+  </div>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>

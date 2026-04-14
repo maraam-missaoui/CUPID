@@ -2,407 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cupid & Co. — Aesthetic Gifts & Jewelry</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AMORÉ – Aesthetic Jewelry & Gifts</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announcement-bar">
-  <p>✨ Free shipping on orders over 200DT &nbsp;·&nbsp; 💌 Payment on delivery</p>
+  <p>✨ Free delivery on orders over 50DT &nbsp;|&nbsp; 💌 New arrivals every Friday &nbsp;|&nbsp; 🎀 Gift wrapping available</p>
 </div>
 
 <!-- HEADER -->
-<header id="header">
+<header class="header" id="header">
   <div class="header-inner">
-    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <a href="#home" class="logo" onclick="showPage('home')">
-      <span class="logo-icon">✦</span>
-      <span class="logo-text">Cupid <em>&</em> Co.</span>
-    </a>
-    <nav id="mainNav">
-      <a href="#" onclick="showPage('home')" class="nav-link active" data-page="home">Home</a>
-      <a href="#" onclick="showPage('shop')" class="nav-link" data-page="shop">Shop</a>
-      <a href="#" onclick="showPage('about')" class="nav-link" data-page="about">About</a>
-      <a href="#" onclick="showPage('contact')" class="nav-link" data-page="contact">Contact</a>
+    <nav class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </nav>
-    <button class="cart-btn" onclick="showPage('cart')" aria-label="Cart">
-      <i class="fas fa-bag-shopping"></i>
-      <span class="cart-count" id="cartCount">0</span>
-    </button>
+    <a href="index.html" class="logo">
+      <span class="logo-main">AMORÉ</span>
+      <span class="logo-sub">boutique</span>
+    </a>
+    <div class="nav-right">
+      <button class="icon-btn search-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn cart-btn" onclick="openCart()" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- ==================== HOME PAGE ==================== -->
-<div id="page-home" class="page active">
-
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-bg">
-      <div class="hero-blob blob1"></div>
-      <div class="hero-blob blob2"></div>
-      <div class="hero-blob blob3"></div>
-      <div class="floating-hearts">
-        <span>💗</span><span>🌸</span><span>💫</span><span>🎀</span><span>✨</span><span>💕</span>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow fade-up">✦ New Collection 2025 ✦</p>
+    <h1 class="hero-title fade-up delay-1">
+      Made for girls<br/>
+      <em>who love pretty things</em>
+    </h1>
+    <p class="hero-desc fade-up delay-2">Jewelry, accessories & gifts curated for the aesthetic soul. Limited pieces. Always giftable.</p>
+    <div class="hero-btns fade-up delay-3">
+      <a href="shop.html" class="btn btn-primary">Shop Now</a>
+      <a href="shop.html?cat=new" class="btn btn-ghost">New Arrivals →</a>
     </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">New Collection ✨</p>
-      <h1 class="hero-title">Made for Girls<br/><em>Who Feel Everything</em></h1>
-      <p class="hero-subtitle">Aesthetic jewelry, dreamy gifts & limited-edition pieces curated for the romantic at heart.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary" onclick="showPage('shop')">Shop Now <i class="fas fa-arrow-right"></i></button>
-        <button class="btn btn-ghost" onclick="scrollToFeatured()">See What's New</button>
-      </div>
-      <div class="hero-badges">
-        <span>🎀 Giftable packaging</span>
-        <span>💳 Pay on delivery</span>
-        <span>✦ Limited pieces</span>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-card card-main">
-        <div class="product-img-wrap">
-          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&q=80" alt="Featured jewelry" />
-        </div>
-        <div class="hero-card-info">
-          <p>Pearl Butterfly Ring</p>
-          <span>45 DT</span>
-        </div>
-      </div>
-      <div class="hero-card card-sm card-top">
-        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&q=80" alt="Gift" />
-        <p>Gift Box Set</p>
-      </div>
-      <div class="hero-card card-sm card-bot">
-        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&q=80" alt="Necklace" />
-        <p>Cupid Necklace</p>
-      </div>
-    </div>
-  </section>
+  </div>
+  <div class="hero-badge">
+    <span>Payment<br/>on Delivery</span>
+  </div>
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
 
-  <!-- CATEGORIES STRIP -->
-  <section class="categories-strip">
-    <button class="cat-pill active" onclick="filterAndGo('all')">🌸 All</button>
-    <button class="cat-pill" onclick="filterAndGo('jewelry')">💍 Jewelry</button>
-    <button class="cat-pill" onclick="filterAndGo('gifts')">🎁 Gift Sets</button>
-    <button class="cat-pill" onclick="filterAndGo('accessories')">🎀 Accessories</button>
-    <button class="cat-pill" onclick="filterAndGo('trending')">🔥 Trending</button>
-  </section>
+<!-- CATEGORIES STRIP -->
+<section class="categories-strip">
+  <div class="container">
+    <div class="cats-grid">
+      <a href="shop.html?cat=jewelry" class="cat-pill">
+        <span class="cat-icon">💎</span> Jewelry
+      </a>
+      <a href="shop.html?cat=accessories" class="cat-pill">
+        <span class="cat-icon">👜</span> Accessories
+      </a>
+      <a href="shop.html?cat=hair" class="cat-pill">
+        <span class="cat-icon">🎀</span> Hair
+      </a>
+      <a href="shop.html?cat=cases" class="cat-pill">
+        <span class="cat-icon">✨</span> Cases
+      </a>
+      <a href="shop.html?cat=beauty" class="cat-pill">
+        <span class="cat-icon">💄</span> Beauty
+      </a>
+      <a href="shop.html?cat=charms" class="cat-pill">
+        <span class="cat-icon">🌸</span> Charms
+      </a>
+    </div>
+  </div>
+</section>
 
-  <!-- FEATURED PRODUCTS -->
-  <section class="featured-section" id="featured">
+<!-- FEATURED PRODUCTS -->
+<section class="section featured-section">
+  <div class="container">
     <div class="section-header">
-      <p class="section-eyebrow">✦ Handpicked for You</p>
-      <h2>Currently Obsessed With</h2>
+      <p class="section-eyebrow">— Curated for you —</p>
+      <h2 class="section-title">Bestsellers</h2>
     </div>
-    <div class="products-grid" id="featuredGrid"></div>
+    <div class="products-grid" id="featuredGrid">
+      <!-- Filled by JS -->
+    </div>
     <div class="section-cta">
-      <button class="btn btn-outline" onclick="showPage('shop')">View All Products <i class="fas fa-arrow-right"></i></button>
+      <a href="shop.html" class="btn btn-outline">View All Products</a>
     </div>
-  </section>
-
-  <!-- WHY US -->
-  <section class="why-us">
-    <div class="why-bg"></div>
-    <div class="why-content">
-      <div class="section-header">
-        <p class="section-eyebrow">Why Cupid & Co.</p>
-        <h2>Designed with Love</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">🎀</div>
-          <h3>Gift-Ready Packaging</h3>
-          <p>Every order comes wrapped beautifully — ready to gift straight from the box.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">💳</div>
-          <h3>Pay on Delivery</h3>
-          <p>No need to pay online. We deliver first, you pay when you receive your order.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">✨</div>
-          <h3>Limited Editions</h3>
-          <p>Pieces so rare, once they're gone — they're gone. Don't sleep on drops.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">💌</div>
-          <h3>Curated Aesthetic</h3>
-          <p>Every item is handpicked to match the soft, romantic, TikTok-worthy vibe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="reviews-section">
-    <div class="section-header">
-      <p class="section-eyebrow">💬 Real Girls, Real Love</p>
-      <h2>What They're Saying</h2>
-    </div>
-    <div class="reviews-track">
-      <div class="reviews-inner" id="reviewsInner">
-        <!-- filled by JS -->
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA BANNER -->
-  <section class="cta-banner">
-    <div class="cta-bg"></div>
-    <div class="cta-content">
-      <h2>New Drop Every Friday 🌸</h2>
-      <p>Follow us on TikTok & Instagram to never miss a limited piece.</p>
-      <div class="social-links">
-        <a href="#" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a href="#" class="social-btn"><i class="fab fa-instagram"></i> Instagram</a>
-      </div>
-    </div>
-  </section>
-
-</div><!-- end home -->
-
-<!-- ==================== SHOP PAGE ==================== -->
-<div id="page-shop" class="page">
-  <div class="page-hero shop-hero">
-    <div class="hero-blob blob1"></div>
-    <h1>The Shop ✨</h1>
-    <p>Find your next obsession</p>
   </div>
-  <section class="shop-section">
-    <div class="shop-controls">
-      <div class="filter-pills" id="shopFilters">
-        <button class="cat-pill active" data-filter="all" onclick="setFilter('all',this)">🌸 All</button>
-        <button class="cat-pill" data-filter="jewelry" onclick="setFilter('jewelry',this)">💍 Jewelry</button>
-        <button class="cat-pill" data-filter="gifts" onclick="setFilter('gifts',this)">🎁 Gift Sets</button>
-        <button class="cat-pill" data-filter="accessories" onclick="setFilter('accessories',this)">🎀 Accessories</button>
-        <button class="cat-pill" data-filter="trending" onclick="setFilter('trending',this)">🔥 Trending</button>
-      </div>
-      <select class="sort-select" onchange="sortProducts(this.value)">
-        <option value="default">Sort by: Featured</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-        <option value="name">Name A–Z</option>
-      </select>
-    </div>
-    <div class="products-grid" id="shopGrid"></div>
-  </section>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>✦ cute &amp; giftable</span>
+    <span>✦ aesthetic jewelry</span>
+    <span>✦ limited pieces</span>
+    <span>✦ payment on delivery</span>
+    <span>✦ TikTok trending</span>
+    <span>✦ made with love</span>
+    <span>✦ cute &amp; giftable</span>
+    <span>✦ aesthetic jewelry</span>
+    <span>✦ limited pieces</span>
+    <span>✦ payment on delivery</span>
+    <span>✦ TikTok trending</span>
+    <span>✦ made with love</span>
+  </div>
 </div>
 
-<!-- ==================== PRODUCT PAGE ==================== -->
-<div id="page-product" class="page">
-  <div class="product-page-inner" id="productPageInner"></div>
-</div>
-
-<!-- ==================== ABOUT PAGE ==================== -->
-<div id="page-about" class="page">
-  <div class="page-hero about-hero">
-    <div class="hero-blob blob1"></div>
-    <h1>Our Story 💗</h1>
-    <p>Born from a love of all things cute</p>
-  </div>
-  <section class="about-section">
-    <div class="about-grid">
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-strip-inner">
       <div class="about-text">
-        <p class="section-eyebrow">✦ Who We Are</p>
-        <h2>Cupid & Co. was built for dreamers</h2>
-        <p>We started as a small passion project — two girls who were tired of settling for boring accessories. We wanted cute, affordable, aesthetic pieces that actually felt <em>special</em>.</p>
-        <p>Now we curate limited-edition jewelry, gift sets, and accessories for girls who want their style to tell a story. Every piece we pick is something we'd personally wear or gift to our best friend.</p>
-        <p>Based in Tunisia 🇹🇳 — shipping all over with love, and always with payment on delivery because trust matters.</p>
-        <div class="about-stats">
-          <div><strong>500+</strong><span>Happy customers</span></div>
-          <div><strong>100%</strong><span>Pay on delivery</span></div>
-          <div><strong>New</strong><span>Drop every Friday</span></div>
-        </div>
+        <p class="section-eyebrow">— Our Story —</p>
+        <h2>Built for girls who dream in pink</h2>
+        <p>AMORÉ was born from a love of pretty things — the kind that make you feel like the main character. Every piece is handpicked with soft, romantic aesthetics in mind. Think cupid-core, dreamy golds, and gifts your best friend will obsess over.</p>
+        <a href="about.html" class="btn btn-outline">Meet Us</a>
       </div>
       <div class="about-visual">
-        <div class="about-img-stack">
-          <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=400&q=80" alt="jewelry flat lay" class="about-img1" />
-          <img src="https://images.unsplash.com/photo-1591375372226-3e6e4bde29dc?w=300&q=80" alt="cute packaging" class="about-img2" />
-          <div class="about-badge">Made with 💗</div>
+        <div class="about-card">
+          <div class="about-card-inner">
+            <span class="about-card-num">500+</span>
+            <span class="about-card-label">Happy Customers</span>
+          </div>
+        </div>
+        <div class="about-card about-card-2">
+          <div class="about-card-inner">
+            <span class="about-card-num">100%</span>
+            <span class="about-card-label">Cash on Delivery</span>
+          </div>
+        </div>
+        <div class="about-card about-card-3">
+          <div class="about-card-inner">
+            <span class="about-card-num">💌</span>
+            <span class="about-card-label">Gift Wrapping</span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-</div>
-
-<!-- ==================== CART PAGE ==================== -->
-<div id="page-cart" class="page">
-  <div class="page-hero cart-hero">
-    <div class="hero-blob blob1"></div>
-    <h1>Your Bag 🛍️</h1>
   </div>
-  <section class="cart-section">
-    <div class="cart-layout">
-      <div class="cart-items" id="cartItems">
-        <!-- filled by JS -->
-      </div>
-      <div class="cart-sidebar">
-        <div class="order-summary" id="orderSummary">
-          <!-- filled by JS -->
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+</section>
 
-<!-- ==================== CHECKOUT PAGE ==================== -->
-<div id="page-checkout" class="page">
-  <div class="page-hero checkout-hero">
-    <div class="hero-blob blob1"></div>
-    <h1>Almost There! 🎀</h1>
-    <p>Just fill in your details</p>
+<!-- NEW ARRIVALS -->
+<section class="section new-arrivals-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">— Just dropped —</p>
+      <h2 class="section-title">New Arrivals</h2>
+    </div>
+    <div class="products-grid" id="newArrivalsGrid">
+      <!-- Filled by JS -->
+    </div>
   </div>
-  <section class="checkout-section">
-    <div class="checkout-layout">
-      <div class="checkout-form-wrap">
-        <h2>Delivery Details</h2>
-        <div class="checkout-form">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" id="cFullName" placeholder="Your full name" />
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" id="cPhone" placeholder="+216 XX XXX XXX" />
-          </div>
-          <div class="form-group">
-            <label>Delivery Address *</label>
-            <textarea id="cAddress" placeholder="Street, city, region..." rows="3"></textarea>
-          </div>
-          <div class="form-group">
-            <label>Order Notes (optional)</label>
-            <textarea id="cNotes" placeholder="Any special requests? Gift message?" rows="2"></textarea>
-          </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-eyebrow">— They love us —</p>
+      <h2 class="section-title">Customer Love ♡</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Got the pearl necklace as a gift for my friend and she literally cried 😭 So beautiful and the packaging was SO cute. Will definitely order again!"</p>
+        <div class="review-author">
+          <div class="review-avatar">S</div>
+          <span>Sana, Tunis</span>
         </div>
       </div>
-      <div class="checkout-summary" id="checkoutSummary">
-        <!-- filled by JS -->
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Omg the aesthetic is unreal. Got my laptop case and three jewelry pieces. Everything looks exactly like the photos. Super fast delivery too!"</p>
+        <div class="review-author">
+          <div class="review-avatar">L</div>
+          <span>Lina, Sousse</span>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My order came wrapped so prettily 🎀 The lip gloss holder is so trendy and the quality is amazing. This is my new fave shop for sure."</p>
+        <div class="review-author">
+          <div class="review-avatar">M</div>
+          <span>Mariem, Sfax</span>
+        </div>
       </div>
     </div>
-    <div class="checkout-actions">
-      <button class="btn btn-ghost" onclick="showPage('cart')"><i class="fas fa-arrow-left"></i> Back to Cart</button>
-      <button class="btn btn-primary btn-large" onclick="placeOrder()">Confirm Order 💗</button>
-    </div>
-  </section>
-</div>
-
-<!-- ==================== CONFIRMATION PAGE ==================== -->
-<div id="page-confirmation" class="page">
-  <section class="confirmation-section">
-    <div class="confirmation-card">
-      <div class="confirm-icon">🎀</div>
-      <h1>Order Placed!</h1>
-      <p class="confirm-subtitle">Your order is confirmed and will be delivered soon.</p>
-      <div class="confirm-details" id="confirmDetails"></div>
-      <div class="confirm-note">
-        <i class="fas fa-truck"></i>
-        <p><strong>Payment on delivery</strong> — You pay when you receive your package. No online payment needed!</p>
-      </div>
-      <button class="btn btn-primary" onclick="showPage('shop')">Continue Shopping ✨</button>
-    </div>
-  </section>
-</div>
-
-<!-- ==================== CONTACT PAGE ==================== -->
-<div id="page-contact" class="page">
-  <div class="page-hero contact-hero">
-    <div class="hero-blob blob1"></div>
-    <h1>Say Hello 💌</h1>
-    <p>We'd love to hear from you</p>
   </div>
-  <section class="contact-section">
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h2>Get in Touch</h2>
-        <p>Have questions about your order, want to collaborate, or just want to chat about aesthetics? We're here!</p>
-        <div class="contact-methods">
-          <a href="https://instagram.com" class="contact-card">
-            <i class="fab fa-instagram"></i>
-            <div><strong>Instagram</strong><span>@cupidandco.tn</span></div>
-          </a>
-          <a href="https://tiktok.com" class="contact-card">
-            <i class="fab fa-tiktok"></i>
-            <div><strong>TikTok</strong><span>@cupidandco</span></div>
-          </a>
-          <a href="mailto:hello@cupidandco.tn" class="contact-card">
-            <i class="fas fa-envelope"></i>
-            <div><strong>Email</strong><span>hello@cupidandco.tn</span></div>
-          </a>
-          <a href="https://wa.me/21600000000" class="contact-card">
-            <i class="fab fa-whatsapp"></i>
-            <div><strong>WhatsApp</strong><span>+216 XX XXX XXX</span></div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form-wrap">
-        <h2>Send a Message</h2>
-        <div class="checkout-form">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Name" />
-          </div>
-          <div class="form-group">
-            <label>Email or Phone</label>
-            <input type="text" placeholder="Email or phone" />
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea rows="4" placeholder="What's on your mind?"></textarea>
-          </div>
-          <button class="btn btn-primary" style="width:100%">Send Message 💌</button>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <span class="logo-icon">✦</span>
-      <span class="logo-text">Cupid <em>&</em> Co.</span>
-      <p>Aesthetic gifts & jewelry for the romantic at heart. Made in Tunisia 🇹🇳</p>
-      <div class="footer-social">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">AMORÉ</div>
+        <p>Aesthetic jewelry & gifts for girls who love pretty things. Based in Tunisia. Delivering everywhere. 💌</p>
+        <div class="footer-social">
+          <a href="#" class="social-link">TikTok</a>
+          <a href="#" class="social-link">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="shop.html?cat=jewelry">Jewelry</a>
+        <a href="shop.html?cat=accessories">Accessories</a>
+        <a href="shop.html?cat=cases">Cases</a>
+        <a href="shop.html?cat=beauty">Beauty</a>
+        <a href="shop.html?cat=charms">Charms</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns Policy</a>
+      </div>
+      <div class="footer-col">
+        <h4>We Accept</h4>
+        <div class="payment-badge">💵 Cash on Delivery</div>
+        <p style="font-size:0.8rem;opacity:0.6;margin-top:8px">No online payment needed. Pay when your package arrives!</p>
       </div>
     </div>
-    <div class="footer-links">
-      <h4>Navigate</h4>
-      <a href="#" onclick="showPage('home')">Home</a>
-      <a href="#" onclick="showPage('shop')">Shop</a>
-      <a href="#" onclick="showPage('about')">About</a>
-      <a href="#" onclick="showPage('contact')">Contact</a>
+    <div class="footer-bottom">
+      <p>© 2025 AMORÉ Boutique. Made with ♡ in Tunisia.</p>
     </div>
-    <div class="footer-links">
-      <h4>Info</h4>
-      <a href="#">Shipping & Delivery</a>
-      <a href="#">Returns Policy</a>
-      <a href="#">FAQ</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div class="footer-links">
-      <h4>Payment</h4>
-      <p class="footer-pay">💳 Payment on delivery<br/>No online payment required.<br/>Pay when you receive your order.</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2025 Cupid & Co. — Made with 💗 in Tunisia</p>
   </div>
 </footer>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag 🛍️</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span>Subtotal</span><span id="cartSubtotal">0 DT</span>
+    </div>
+    <div class="cart-delivery">
+      <span>Delivery fee</span><span>8 DT</span>
+    </div>
+    <div class="cart-total">
+      <span>Total</span><span id="cartTotal">0 DT</span>
+    </div>
+    <a href="checkout.html" class="btn btn-primary btn-full">Checkout →</a>
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <p>🛍️</p>
+    <p>Your bag is empty</p>
+    <a href="shop.html" class="btn btn-outline" onclick="closeCart()">Start Shopping</a>
+  </div>
+</div>
 
-<script src="app.js"></script>
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

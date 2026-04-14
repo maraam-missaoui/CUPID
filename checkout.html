@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout – AMORÉ Boutique</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="announcement-bar">
+  <p>💵 Payment on Delivery — No online payment needed!</p>
+</div>
+
+<header class="header" id="header">
+  <div class="header-inner">
+    <nav class="nav-left">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="shop.html" class="nav-link">Shop</a>
+    </nav>
+    <a href="index.html" class="logo">
+      <span class="logo-main">AMORÉ</span>
+      <span class="logo-sub">boutique</span>
+    </a>
+    <div class="nav-right">
+      <button class="icon-btn cart-btn" onclick="openCart()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="checkout-section">
+  <div class="container">
+    <div class="checkout-grid">
+
+      <!-- LEFT: FORM -->
+      <div class="checkout-form-col">
+        <h1 class="checkout-title">Almost there ✨</h1>
+        <p class="checkout-subtitle">Fill in your delivery info. You'll pay when your package arrives 💌</p>
+
+        <div class="checkout-form" id="checkoutForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" id="firstName" placeholder="Lina" required/>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" id="lastName" placeholder="Ben Ali" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="phone" placeholder="+216 XX XXX XXX" required/>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="email" placeholder="lina@email.com" required/>
+          </div>
+          <div class="form-group">
+            <label>Town / City *</label>
+            <input type="text" id="town" placeholder="Tunis, Sousse, Sfax..." required/>
+          </div>
+          <div class="form-group">
+            <label>Full Address *</label>
+            <textarea id="address" placeholder="Street, building, floor..." rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Order Notes (optional)</label>
+            <textarea id="notes" placeholder="Any special requests? Color preference? Gift message?" rows="2"></textarea>
+          </div>
+
+          <div class="payment-notice">
+            <span class="payment-notice-icon">💵</span>
+            <div>
+              <strong>Payment on Delivery</strong>
+              <p>You will pay in cash when your package arrives. No online payment needed!</p>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-full btn-confirm" onclick="confirmOrder()" id="confirmBtn">
+            Confirm My Order →
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <div class="checkout-summary-col">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-items" id="summaryItems"></div>
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="summarySubtotal">0 DT</span>
+          </div>
+          <div class="summary-line">
+            <span>Delivery Fee</span>
+            <span>8 DT</span>
+          </div>
+          <div class="summary-total">
+            <span>Total to Pay</span>
+            <span id="summaryTotal">0 DT</span>
+          </div>
+          <div class="summary-note">
+            <p>💵 Pay this amount in cash upon delivery</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal success-modal">
+    <div class="success-icon">🎀</div>
+    <h2>Order Confirmed!</h2>
+    <p>Thank you so much, <strong id="successName"></strong>! 💌</p>
+    <p>Your order is on its way. You'll pay <strong id="successTotal"></strong> when it arrives.</p>
+    <p style="opacity:0.7;font-size:0.9rem;margin-top:8px">We'll reach out on <strong id="successPhone"></strong> to confirm delivery.</p>
+    <a href="index.html" class="btn btn-primary" style="margin-top:24px">Continue Shopping ✨</a>
+  </div>
+</div>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Bag 🛍️</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-subtotal">
+      <span>Subtotal</span><span id="cartSubtotal">0 DT</span>
+    </div>
+    <div class="cart-delivery">
+      <span>Delivery fee</span><span>8 DT</span>
+    </div>
+    <div class="cart-total">
+      <span>Total</span><span id="cartTotal">0 DT</span>
+    </div>
+    <a href="checkout.html" class="btn btn-primary btn-full">Checkout →</a>
+  </div>
+  <div class="cart-empty" id="cartEmpty">
+    <p>🛍️</p>
+    <p>Your bag is empty</p>
+    <a href="shop.html" class="btn btn-outline" onclick="closeCart()">Start Shopping</a>
+  </div>
+</div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
